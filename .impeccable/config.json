@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-03T02:30:02.297Z",
+        "reason": "Claude verified: static scan of .readout ignores styles.css; the rendered detector run against localhost returned no findings and .readout has padding clamp(24px, 3vw, 40px)"
+      }
+    ]
+  }
+}

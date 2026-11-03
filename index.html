@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta name="color-scheme" content="dark">
+  <title>Daredevil, a fan tribute</title>
+  <meta name="description" content="An unofficial fan tribute to Daredevil. The page works the way Matt Murdock does: tap anywhere and listen for what comes back.">
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-latin.woff2" crossorigin>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%230b0b0c%22/%3E%3Ccircle cx=%2211%22 cy=%229%22 r=%223.5%22 fill=%22%23e0303a%22/%3E%3Ccircle cx=%2221%22 cy=%229%22 r=%223.5%22 fill=%22%23e0303a%22/%3E%3Ccircle cx=%2221%22 cy=%2216%22 r=%223.5%22 fill=%22%23e0303a%22/%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="assets/img/tenth-ave-crossing.jpg">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('dd-lights')==='on')document.documentElement.classList.add('all-lit')}catch(e){}</script>
+</head>
+<body>
+  <a class="skip" href="#who">Skip to content</a>
+
+  <header class="nav">
+    <a class="wordmark" href="#top">Daredevil<span class="wordmark-tail">, a fan tribute</span></a>
+    <nav aria-label="Sections">
+      <ul>
+        <li class="nav-secondary"><a href="#who">Who he is</a></li>
+        <li class="nav-secondary"><a href="#runs">Essential runs</a></li>
+        <li class="nav-secondary"><a href="#people">Rogues &amp; allies</a></li>
+        <li><a class="nav-action" href="#hells-kitchen">Hell's Kitchen</a></li>
+      </ul>
+    </nav>
+    <button class="lights-toggle" type="button" aria-pressed="false">Lights<span class="lights-tail"> up</span></button>
+  </header>
+  <script>document.documentElement.style.setProperty("--nav-h", document.currentScript.previousElementSibling.offsetHeight + "px")</script>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo" aria-hidden="true">
+        <img src="assets/img/tenth-ave-crossing.jpg" alt="" width="2000" height="1500" decoding="async" fetchpriority="high">
+      </div>
+      <div class="hero-lit" aria-hidden="true">
+        <img src="assets/img/tenth-ave-crossing.jpg" alt="" width="2000" height="1500" decoding="async">
+      </div>
+
+      <h1 id="hero-title" class="braille">
+        <span class="visually-hidden">Daredevil</span>
+        <span class="cells" aria-hidden="true" data-word="DAREDEVIL"></span>
+      </h1>
+
+      <div class="hero-copy">
+        <p class="statement" data-echo>Matt Murdock lost his sight as a boy and gained everything else.<span class="tap-hint"> This page works the way he does: tap anywhere and listen for what comes back.</span></p>
+        <a class="button" href="#hells-kitchen">
+          Walk Hell's Kitchen
+          <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+        </a>
+      </div>
+
+      <div class="pulse" data-echo>
+        <svg class="pulse-line" viewBox="0 0 160 32" width="160" height="32" aria-hidden="true"><path d="M0 18h40l6-12 8 22 7-14 4 4h95" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <p><span class="bpm">72</span> bpm<span class="pulse-note">, steady. He'd know if you were lying.</span></p>
+      </div>
+    </section>
+
+    <!-- WHO HE IS -->
+    <section id="who" class="who" aria-labelledby="who-title">
+      <div class="who-text reveal">
+        <h2 id="who-title" data-echo>A lawyer who sees by sound</h2>
+        <p class="lede" data-echo>Matt Murdock grew up in Hell's Kitchen, the son of a boxer named Battlin' Jack Murdock. He was still a boy when he pushed an old man out of the path of a truck and a canister of radioactive waste struck his eyes.</p>
+        <div class="facts">
+          <p data-echo><strong>He lost his sight.</strong> Everything else sharpened: he hears heartbeats through walls, reads print by touch, and smells a lie of omission.</p>
+          <p data-echo><strong>He gained a radar sense.</strong> Sound strikes the world and comes back as shape. Rooftops, rain and faces arrive as outlines, never as colour.</p>
+          <p data-echo><strong>He kept two jobs.</strong> By day, a defence attorney at Nelson &amp; Murdock. By night, a man in red who trained under a blind master called Stick.</p>
+        </div>
+        <p class="note" data-echo>Created by Stan Lee and Bill Everett. First seen in <cite>Daredevil</cite> #1, April 1964.</p>
+      </div>
+      <figure class="who-art reveal" data-echo aria-hidden="true">
+        <svg viewBox="0 0 400 520" width="400" height="520" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M40 512V60h320v452"/>
+            <path d="M28 60h344M34 48h332v12"/>
+            <g class="windows">
+              <rect x="76" y="96" width="56" height="80"/><rect x="172" y="96" width="56" height="80"/><rect x="268" y="96" width="56" height="80"/>
+              <rect x="76" y="216" width="56" height="80"/><rect x="172" y="216" width="56" height="80"/><rect x="268" y="216" width="56" height="80"/>
+              <rect x="76" y="336" width="56" height="80"/><rect x="268" y="336" width="56" height="80"/>
+            </g>
+            <path d="M160 512v-72h80v72M160 440l40-20 40 20"/>
+            <g class="escape">
+              <path d="M260 186h76M260 306h76M260 426h76"/>
+              <path d="M260 186v8h76v-8M260 306v8h76v-8M260 426v8h76v-8"/>
+              <path d="M272 194l52 112M324 314l-52 112"/>
+            </g>
+          </g>
+          <rect class="lit-window" x="172" y="336" width="56" height="80"/>
+        </svg>
+      </figure>
+    </section>
+
+    <!-- ESSENTIAL RUNS -->
+    <section id="runs" class="runs" aria-labelledby="runs-title">
+      <div class="runs-head reveal">
+        <h2 id="runs-title" data-echo>Sixty years, ten runs</h2>
+        <p data-echo>Where to start reading. Creators and years only; find the books at your library or comic shop.</p>
+      </div>
+      <ol class="run-list">
+        <li class="run reveal" data-echo><span class="run-years">1964</span><span class="run-title">The beginning<span class="run-by">Stan Lee &amp; Bill Everett</span></span><span class="run-why">Issue #1: the accident, the father, the first costume.</span></li>
+        <li class="run reveal" data-echo><span class="run-years">1979–83</span><span class="run-title">Elektra and the Hand<span class="run-by">Frank Miller &amp; Klaus Janson</span></span><span class="run-why">The run that turned a swashbuckler into noir.</span></li>
+        <li class="run reveal" data-echo><span class="run-years">1986</span><span class="run-title">Born Again<span class="run-by">Frank Miller &amp; David Mazzucchelli</span></span><span class="run-why">The Kingpin learns who he is and takes everything.</span></li>
+        <li class="run reveal" data-echo><span class="run-years">1986–91</span><span class="run-title">The Nocenti years<span class="run-by">Ann Nocenti &amp; John Romita Jr.</span></span><span class="run-why">Strange, political and underrated.</span></li>
+        <li class="run reveal" data-echo><span class="run-years">1993</span><span class="run-title">The Man Without Fear<span class="run-by">Frank Miller &amp; John Romita Jr.</span></span><span class="run-why">The origin, told again, harder.</span></li>
+        <li class="run reveal" data-echo><span class="run-years">1998</span><span class="run-title">Guardian Devil<span class="run-by">Kevin Smith &amp; Joe Quesada</span></span><span class="run-why">Faith, a baby and a very bad week.</span></li>
+        <li class="run reveal" data-echo><span class="run-years">2001–06</span><span class="run-title">Unmasked<span class="run-by">Brian Michael Bendis &amp; Alex Maleev</span></span><span class="run-why">The tabloids out him. He denies it in court.</span></li>
+        <li class="run reveal" data-echo><span class="run-years">2006–09</span><span class="run-title">The Devil in Cell-Block D<span class="run-by">Ed Brubaker &amp; Michael Lark</span></span><span class="run-why">Matt starts in prison and ends somewhere worse.</span></li>
+        <li class="run reveal" data-echo><span class="run-years">2011–15</span><span class="run-title">The light run<span class="run-by">Mark Waid, Paolo Rivera, Marcos Martín &amp; Chris Samnee</span></span><span class="run-why">Proof the character can smile.</span></li>
+        <li class="run reveal" data-echo><span class="run-years">2019–23</span><span class="run-title">To Heaven Through Hell<span class="run-by">Chip Zdarsky &amp; Marco Checchetto</span></span><span class="run-why">A death on his hands and a trial of conscience.</span></li>
+      </ol>
+    </section>
+
+    <!-- ROGUES & ALLIES -->
+    <section id="people" class="people" aria-labelledby="people-title">
+      <div class="people-head reveal">
+        <h2 id="people-title" data-echo>Rogues &amp; allies, by heartbeat</h2>
+        <p data-echo>Matt knows people by their pulse before he knows their faces. Pick someone and listen.</p>
+      </div>
+      <div class="people-body">
+        <ul class="roster" aria-label="People">
+          <li><button type="button" data-person="foggy" aria-pressed="true" data-echo>Foggy Nelson</button></li>
+          <li><button type="button" data-person="karen" aria-pressed="false" data-echo>Karen Page</button></li>
+          <li><button type="button" data-person="stick" aria-pressed="false" data-echo>Stick</button></li>
+          <li><button type="button" data-person="elektra" aria-pressed="false" data-echo>Elektra</button></li>
+          <li><button type="button" data-person="kingpin" aria-pressed="false" data-echo>Wilson Fisk</button></li>
+          <li><button type="button" data-person="bullseye" aria-pressed="false" data-echo>Bullseye</button></li>
+        </ul>
+        <div class="readout" data-echo>
+          <div class="ecg" aria-hidden="true"><svg viewBox="0 0 600 160" preserveAspectRatio="none"><path d=""/></svg></div>
+          <div class="readout-text" aria-live="polite">
+            <h3 class="readout-name">Foggy Nelson</h3>
+            <p class="readout-meta"><span class="readout-role">Ally</span>, resting at <span class="readout-bpm">96</span> bpm</p>
+            <p class="readout-desc">His law partner and best friend since law school. Hears everything, forgives most of it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HELL'S KITCHEN -->
+    <section id="hells-kitchen" class="hk" aria-labelledby="hk-title">
+      <div class="hk-head reveal">
+        <h2 id="hk-title" data-echo>Hell's Kitchen is a real place</h2>
+        <p data-echo>West 34th to 59th Street, Eighth Avenue to the Hudson. Walk-ups and fire escapes, theatres and all-night bars: the neighborhood Matt Murdock never left.<span class="tap-hint"> Tap a photograph to bring back its colour.</span></p>
+      </div>
+
+      <div class="hk-mosaic">
+        <figure class="photo hk-a reveal" data-echo="photo">
+          <div class="frame">
+            <img class="mono" src="assets/img/neon-gear.jpg" alt="" width="1600" height="1200" loading="lazy" decoding="async">
+            <img class="color" src="assets/img/neon-gear.jpg" alt="A red neon sign reading Hell's Kitchen Gear, with tenement fire escapes reflected in the shop window" width="1600" height="1200" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Neon in a shop window, Hell's Kitchen.</figcaption>
+        </figure>
+        <figure class="photo hk-b reveal" data-echo="photo">
+          <div class="frame">
+            <img class="mono" src="assets/img/storyville-light.jpg" alt="" width="1100" height="1650" loading="lazy" decoding="async">
+            <img class="color" src="assets/img/storyville-light.jpg" alt="A bar door at night under a red sign, a red lamp glowing beside it" width="1100" height="1650" loading="lazy" decoding="async">
+          </div>
+          <figcaption>A bar door at night.</figcaption>
+        </figure>
+        <figure class="photo hk-c reveal" data-echo="photo">
+          <div class="frame">
+            <img class="mono" src="assets/img/w46-1973.jpg" alt="" width="1600" height="1087" loading="lazy" decoding="async">
+            <img class="color" src="assets/img/w46-1973.jpg" alt="Two shirtless boys throwing a red frisbee across a wide street" width="1600" height="1087" loading="lazy" decoding="async">
+          </div>
+          <figcaption>West 46th Street, 1973. Danny Lyon.</figcaption>
+        </figure>
+      </div>
+
+      <div class="hk-strip">
+        <figure class="photo hk-d reveal" data-echo="photo">
+          <div class="frame">
+            <img class="mono" src="assets/img/brownstones.jpg" alt="" width="1100" height="1583" loading="lazy" decoding="async">
+            <img class="color" src="assets/img/brownstones.jpg" alt="A row of brownstone houses with high stoops behind street trees" width="1100" height="1583" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Brownstones and stoops.</figcaption>
+        </figure>
+        <figure class="photo hk-e reveal" data-echo="photo">
+          <div class="frame">
+            <img class="mono" src="assets/img/tenth-ave-uptown.jpg" alt="" width="1600" height="1200" loading="lazy" decoding="async">
+            <img class="color" src="assets/img/tenth-ave-uptown.jpg" alt="Tenth Avenue looking uptown at dusk, taxis and a pedestrian crossing" width="1600" height="1200" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Tenth Avenue, looking uptown.</figcaption>
+        </figure>
+        <figure class="photo hk-f reveal" data-echo="photo">
+          <div class="frame">
+            <img class="mono" src="assets/img/skyline-dusk.jpg" alt="" width="1800" height="1200" loading="lazy" decoding="async">
+            <img class="color" src="assets/img/skyline-dusk.jpg" alt="Midtown towers lit gold by the setting sun above low Hell's Kitchen rooftops and a water tower" width="1800" height="1200" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Midtown from the low roofs, at dusk.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-name" data-echo aria-hidden="true">Daredevil</p>
+    <div class="footer-cols">
+      <div>
+        <h2 class="footer-title">Unofficial fan tribute</h2>
+        <p>Made by a fan, for fans. Not affiliated with, endorsed by or sponsored by Marvel or The Walt Disney Company. Daredevil, Matt Murdock and all related characters and names are trademarks of Marvel Characters, Inc. No Marvel artwork, lettering, logos or screenshots are used. The illustration is original; the type is Archivo (SIL Open Font License).</p>
+      </div>
+      <div>
+        <h2 class="footer-title">Photographs</h2>
+        <ul class="credits">
+          <li>Tenth Avenue crossing: Daniel Steuri, <a href="https://commons.wikimedia.org/wiki/File:Cross_The_Street_(200876449).jpeg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></li>
+          <li>Hell's Kitchen Gear: Roger Rowlett, <a href="https://commons.wikimedia.org/wiki/File:Hells-kitchen-gear.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/2.5/">CC BY-SA 2.5</a></li>
+          <li>Bar door at night: Billie Grace Ward, <a href="https://commons.wikimedia.org/wiki/File:Delta_Grill_(16453813979).jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></li>
+          <li>West 46th Street, 1973: Danny Lyon for the EPA, <a href="https://commons.wikimedia.org/wiki/File:BOYS_PLAYING_FRISBEE_ACROSS_WEST_46TH_STREET_IN_MANHATTAN_NEW_YORK_CITY._THE_INNER_CITY_TODAY_IS_AN_ABSOLUTE..._-_NARA_-_555934.jpg">National Archives via Wikimedia Commons</a>, public domain</li>
+          <li>Brownstones: Tony Hisgett, <a href="https://commons.wikimedia.org/wiki/File:Brownstone_1_(4688626968).jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></li>
+          <li>Tenth Avenue uptown: Roger Rowlett, <a href="https://commons.wikimedia.org/wiki/File:10th-ave.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/2.5/">CC BY-SA 2.5</a></li>
+          <li>Midtown at dusk: Kevin He, <a href="https://commons.wikimedia.org/wiki/File:Hochh%C3%A4user_in_der_Abendsonne_(16076680672).jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="echo-layer" aria-hidden="true"></div>
+  <script src="main.js" defer></script>
+</body>
+</html>

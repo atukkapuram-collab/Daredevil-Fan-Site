@@ -1,0 +1,10 @@
+# local tooling
+.claude/
+.playwright-mcp/
+.impeccable/hook.cache.json
+.impeccable/config.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

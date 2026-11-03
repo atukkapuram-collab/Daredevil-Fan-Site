@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T00:00:00Z",
+  "title": "Design System: Daredevil, a fan tribute",
+  "extensions": {
+    "colorMeta": {
+      "ground": { "role": "neutral", "displayName": "Ground", "canonical": "#0b0b0c", "cssVar": "--ground", "tonalRamp": ["#0b0b0c", "#131315", "#1d1d20", "#3a3a3e", "#5c5c61", "#8a8a8f", "#bdbdc1", "#ececee"] },
+      "ground-raised": { "role": "neutral", "displayName": "Raised Ground", "canonical": "#131315", "cssVar": "--ground-2", "tonalRamp": ["#0b0b0c", "#131315", "#1d1d20", "#2a2a2e", "#3a3a3e", "#5c5c61", "#8a8a8f", "#ececee"] },
+      "warm-ink": { "role": "neutral", "displayName": "Warm Ink", "canonical": "#eeeae3", "cssVar": "--ink", "tonalRamp": ["#1f1d1a", "#38352f", "#55514a", "#77736b", "#9a968e", "#bdb9b1", "#dcd8d0", "#eeeae3"] },
+      "echo-red": { "role": "primary", "displayName": "Echo Red", "canonical": "#e0303a", "cssVar": "--red", "tonalRamp": ["#2e0507", "#55090e", "#7f0e15", "#b5121b", "#e0303a", "#ea6b71", "#f3a5a8", "#fbe0e1"] },
+      "signal-red-fill": { "role": "primary", "displayName": "Signal Red Fill", "canonical": "#b5121b", "cssVar": "--red-fill", "tonalRamp": ["#2e0507", "#55090e", "#7f0e15", "#b5121b", "#c8141e", "#e0303a", "#f3a5a8", "#fbe0e1"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Footer name only, uppercase, condensed (wdth 62), edge to edge." },
+      "braille-letter": { "displayName": "Braille Letter", "purpose": "Letters resolving above the hero braille cells; rest at 7% opacity, lit by the echo." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings, sentence case, balanced wrap." },
+      "numeral": { "displayName": "Numeral", "purpose": "Run years; condensed, tabular." },
+      "title": { "displayName": "Title", "purpose": "Run titles and small headings." },
+      "statement": { "displayName": "Statement", "purpose": "Hero statement and section ledes." },
+      "body": { "displayName": "Body", "purpose": "Reading text, 34-44rem measure." },
+      "label": { "displayName": "Label", "purpose": "Captions, bpm readouts, notes, toggle." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Echo light snap-up, press feedback, entrances, arrow nudge." },
+      { "name": "echo-speed", "value": "1150px/s linear", "purpose": "Ring expansion; an element lights when the ring reaches its nearest edge (delay = distance / speed)." },
+      { "name": "echo-glow", "value": "opacity rest -> peak by 7%, hold to 32%, ease-in-out back to rest; 2800ms full echo, 1500ms hover ping", "purpose": "Per-element WAAPI glow on opacity, interruptible from the on-screen value." },
+      { "name": "echo-rings", "value": "red lead ring at 0ms (peak 0.9), ink ring at 110ms (0.45 full / 0.3 ping); about 8 live at most", "purpose": "The visible sound." },
+      { "name": "hover-ping-limit", "value": "600ms and 260px of travel between pings; ping radius 260px", "purpose": "Mouse-only small pings that never flood the page." },
+      { "name": "press", "value": "scale(0.96-0.98) over 120-140ms", "purpose": "Press feedback on buttons, toggle and roster." },
+      { "name": "entrance", "value": "translateY(24px) -> none, 700ms ease-out, 70ms stagger (max 6)", "purpose": "Transform-only section entrance; content never hidden by opacity." },
+      { "name": "rest-opacity", "value": "0.62 (braille letters 0.07)", "purpose": "Resting state of echo-lit content; above 4.5:1 for reading text." },
+      { "name": "fully-lit-fallback", "value": "prefers-reduced-motion: reduce, no script, or Lights up (.all-lit)", "purpose": "No rings or entrances; everything at full opacity." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "1080px" },
+      { "name": "phone", "value": "720px" },
+      { "name": "narrow", "value": "360px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single filled call to action: square, Signal Red Fill, trailing arrow.",
+      "html": "<a class=\"ds-button\" href=\"#\">Walk Hell's Kitchen <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M4 10h12m-5-5 5 5-5 5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\"/></svg></a>",
+      "css": ".ds-button { display: inline-flex; align-items: center; gap: 12px; background: var(--red-fill, #b5121b); color: #fff; text-decoration: none; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 1.125rem; padding: 18px 28px; border-radius: 0; transition: transform 120ms cubic-bezier(0.23,1,0.32,1), background-color 160ms ease; } .ds-button svg { transition: transform 200ms cubic-bezier(0.23,1,0.32,1); } .ds-button:hover { background: #c8141e; } .ds-button:hover svg { transform: translateX(4px); } .ds-button:active { transform: scale(0.97); } .ds-button:focus-visible { outline: 2px solid var(--red, #e0303a); outline-offset: 4px; }"
+    },
+    {
+      "name": "Lights Toggle",
+      "kind": "button",
+      "refersTo": "toggle",
+      "description": "Square pressed-state toggle that renders the page fully lit.",
+      "html": "<button class=\"ds-toggle\" type=\"button\" aria-pressed=\"false\" onclick=\"this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') !== 'true')\">Lights up</button>",
+      "css": ".ds-toggle { font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.9375rem; font-weight: 500; color: var(--ink, #eeeae3); background: var(--ground-2, #131315); border: 0; border-radius: 0; padding: 8px 14px; cursor: pointer; transition: transform 120ms cubic-bezier(0.23,1,0.32,1), background-color 160ms ease; } .ds-toggle:hover { background: #1d1d20; } .ds-toggle:active { transform: scale(0.96); } .ds-toggle[aria-pressed='true'] { background: var(--ink, #eeeae3); color: var(--ground, #0b0b0c); } .ds-toggle:focus-visible { outline: 2px solid var(--red, #e0303a); outline-offset: 4px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Plain text row: wordmark, dimmed section links, red-underlined destination link.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-wordmark\" href=\"#\">Daredevil, a fan tribute</a><a href=\"#\">Who he is</a><a href=\"#\">Essential runs</a><a class=\"ds-nav-action\" href=\"#\">Hell's Kitchen</a></nav>",
+      "css": ".ds-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; padding: 28px 32px; background: var(--ground, #0b0b0c); color: var(--ink, #eeeae3); font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; } .ds-nav a { color: inherit; text-decoration: none; font-weight: 500; font-size: 1rem; opacity: 0.7; transition: opacity 160ms ease; white-space: nowrap; } .ds-nav a:hover { opacity: 1; } .ds-nav .ds-wordmark { opacity: 1; font-weight: 600; font-size: 1.0625rem; margin-right: auto; } .ds-nav .ds-nav-action { opacity: 1; font-weight: 600; border-bottom: 2px solid var(--red, #e0303a); padding-bottom: 4px; } .ds-nav a:focus-visible { outline: 2px solid var(--red, #e0303a); outline-offset: 4px; }"
+    },
+    {
+      "name": "Roster",
+      "kind": "custom",
+      "description": "Large borderless name buttons; the selected name gets a 12px red point.",
+      "html": "<div class=\"ds-roster\"><button type=\"button\" aria-pressed=\"true\">Foggy Nelson</button><button type=\"button\" aria-pressed=\"false\">Karen Page</button><button type=\"button\" aria-pressed=\"false\">Stick</button></div>",
+      "css": ".ds-roster { display: grid; background: var(--ground, #0b0b0c); padding: 16px; } .ds-roster button { font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; color: var(--ink, #eeeae3); background: none; border: 0; padding: 10px 0; cursor: pointer; text-align: left; font-size: 2.25rem; font-weight: 750; line-height: 1.05; letter-spacing: -0.02em; font-variation-settings: 'wdth' 80; display: flex; align-items: center; gap: 16px; transition: transform 140ms cubic-bezier(0.23,1,0.32,1); } .ds-roster button::before { content: ''; width: 12px; height: 12px; border-radius: 50%; background: var(--red, #e0303a); opacity: 0; transform: scale(0.5); transition: transform 200ms cubic-bezier(0.23,1,0.32,1), opacity 200ms cubic-bezier(0.23,1,0.32,1); flex: none; } .ds-roster button[aria-pressed='true']::before, .ds-roster button:hover::before { opacity: 1; transform: none; } .ds-roster button:active { transform: scale(0.98); } .ds-roster button:focus-visible { outline: 2px solid var(--red, #e0303a); outline-offset: 4px; }"
+    },
+    {
+      "name": "Readout Panel",
+      "kind": "card",
+      "refersTo": "readout-panel",
+      "description": "Square Raised Ground panel with a red ECG line over name, meta and description.",
+      "html": "<div class=\"ds-readout\"><svg viewBox=\"0 0 600 160\" preserveAspectRatio=\"none\"><path d=\"M0 96 L108 96 L144 91 L180 96 L246 96 L270 30 L294 120 L318 96 L600 96\"/></svg><div class=\"ds-readout-text\"><h3>Foggy Nelson</h3><p class=\"ds-meta\">Ally, resting at 96 bpm</p><p>His law partner and best friend since law school.</p></div></div>",
+      "css": ".ds-readout { background: var(--ground-2, #131315); color: var(--ink, #eeeae3); padding: 32px; display: grid; gap: 28px; border-radius: 0; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 1.0625rem; line-height: 1.55; } .ds-readout svg { width: 100%; height: 140px; color: var(--red, #e0303a); overflow: visible; } .ds-readout path { fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; vector-effect: non-scaling-stroke; } .ds-readout-text { display: grid; gap: 8px; } .ds-readout h3 { margin: 0; font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; } .ds-readout p { margin: 0; } .ds-meta { font-weight: 500; }"
+    },
+    {
+      "name": "Echo Photograph",
+      "kind": "custom",
+      "description": "Greyscale photograph at rest; its colour copy fades in when echoed (hover/focus stands in for the echo here). Placeholder fill stands in for a real photo.",
+      "html": "<figure class=\"ds-photo\" tabindex=\"0\"><div class=\"ds-frame\"><div class=\"ds-img ds-mono\"></div><div class=\"ds-img ds-color\"></div></div><figcaption>Neon in a shop window, Hell's Kitchen.</figcaption></figure>",
+      "css": ".ds-photo { margin: 0; display: grid; gap: 14px; width: 320px; color: var(--ink, #eeeae3); font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; } .ds-frame { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--ground-2, #131315); border-radius: 0; } .ds-img { position: absolute; inset: 0; background: #3b4252; } .ds-color { background: #7a2a2f; } .ds-mono { filter: grayscale(1) brightness(0.62); } .ds-color { opacity: 0; transition: opacity 700ms cubic-bezier(0.23,1,0.32,1); } .ds-photo:hover .ds-color, .ds-photo:focus-visible .ds-color { opacity: 1; } .ds-photo:focus-visible { outline: 2px solid var(--red, #e0303a); outline-offset: 4px; } .ds-photo figcaption { font-size: 0.9375rem; font-weight: 500; }"
+    },
+    {
+      "name": "Braille Cell",
+      "kind": "custom",
+      "description": "A braille cell with a condensed letter resting at 7%; hover lights the letter and shrinks the raised dots, as the echo does.",
+      "html": "<span class=\"ds-cell\" aria-label=\"D\"><span class=\"ds-dots\"><i class=\"on\"></i><i></i><i></i><i class=\"on\"></i><i class=\"on\"></i><i></i></span><span class=\"ds-letter\">D</span></span>",
+      "css": ".ds-cell { position: relative; display: inline-grid; place-items: center; width: 120px; height: 180px; background: var(--ground, #0b0b0c); } .ds-dots { position: absolute; width: 64px; aspect-ratio: 2 / 3; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); grid-auto-flow: column; place-items: center; } .ds-dots i { width: 74%; aspect-ratio: 1; border-radius: 50%; background: var(--ink, #eeeae3); opacity: 0.16; transform: scale(0.3); transition: opacity 400ms cubic-bezier(0.23,1,0.32,1), transform 400ms cubic-bezier(0.23,1,0.32,1); } .ds-dots i.on { opacity: 0.72; transform: none; } .ds-letter { font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 170px; line-height: 1; font-weight: 750; font-variation-settings: 'wdth' 62; letter-spacing: -0.02em; color: var(--ink, #eeeae3); opacity: 0.07; transition: opacity 200ms cubic-bezier(0.23,1,0.32,1); } .ds-cell:hover .ds-letter { opacity: 1; } .ds-cell:hover .ds-dots i.on { opacity: 0; transform: scale(0.4); }"
+    },
+    {
+      "name": "Echo Ring",
+      "kind": "custom",
+      "description": "Thin expanding rings: red lead, ink follower 110ms later, linear expansion fading out.",
+      "html": "<div class=\"ds-echo\"><span class=\"ds-ring ds-lead\"></span><span class=\"ds-ring\"></span></div>",
+      "css": ".ds-echo { position: relative; width: 320px; height: 200px; overflow: hidden; background: var(--ground, #0b0b0c); } .ds-ring { position: absolute; left: 50%; top: 50%; width: 360px; height: 360px; margin: -180px 0 0 -180px; border-radius: 50%; border: 1.5px solid var(--ink, #eeeae3); opacity: 0; animation: ds-ring 1600ms linear 110ms infinite; } .ds-lead { border: 2px solid var(--red, #e0303a); animation-delay: 0ms; } @keyframes ds-ring { from { transform: scale(0.01); opacity: 0.9; } to { transform: scale(1); opacity: 0; } } @media (prefers-reduced-motion: reduce) { .ds-ring { animation: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Perceived by Echo",
+    "overview": "The page is a dark room that answers sound. Everything rests dim on a near-black ground; a tap or pointer press sends a ring outward at a constant speed, and each element brightens the instant the ring reaches its nearest edge, then settles back. Photographs rest grey and regain colour only when echoed. The world is built from very few materials: one warm off-white ink, one red, one variable typeface, thin rings, and real street photography of Hell's Kitchen.\n\nDensity is editorial and generous: big tight-set headlines, a twelve-column grid with wide section breaks, and long passages of plain reading text that never need the echo to be legible. Restraint is the brand: one signature effect, small supporting moments (a heartbeat line, an ECG readout, a red point that marks the selected name). The comic-splash hero, costume imagery and red gradients are refused.\n\nAccessibility is part of the world, not an exception to it. Resting text stays above 4.5:1; the braille headline carries real text for assistive tech; reduced motion, no script, and the \"Lights up\" toggle all render the page fully lit and static.",
+    "keyCharacteristics": [
+      "Near-black ground, warm ink, one red used sparingly for signal.",
+      "Content rests dim (62% opacity) and is lit by expanding echo rings.",
+      "Archivo variable only; condensed width (wdth 62) for the braille letters, run years and footer name.",
+      "Square rectangles everywhere; the only circles are braille dots, echo rings and the selection point.",
+      "Flat surfaces; depth comes from light (opacity and colour), never shadow.",
+      "Photographs desaturated at rest, colour when echoed."
+    ],
+    "rules": [
+      { "name": "The One Red Rule", "body": "Red is a signal: rings, lines, a point, one button. It never fills a section, a gradient or a background.", "section": "colors" },
+      { "name": "The Resting Light Rule", "body": "Echo-lit content rests at 62% opacity (`--rest: 0.62`), which keeps warm ink on ground above 4.5:1. Anything that must be read rests no dimmer than this. The single exception is the braille letter (`--rest-letter: 0.07`), which can rest near-invisible because its braille dots and the visually hidden heading carry the word at rest.", "section": "colors" },
+      { "name": "The Width Axis Rule", "body": "Condensed width (wdth 62) belongs to the braille-resolved letters, years and the footer name. Running text stays at wdth 100. Do not introduce a second family.", "section": "typography" },
+      { "name": "The Sentence Case Rule", "body": "Headings and labels are sentence case; the only uppercase is the footer name.", "section": "typography" },
+      { "name": "The Light Not Shadow Rule", "body": "Hierarchy and focus are carried by opacity and colour. No box-shadow, no glow, no blur.", "section": "elevation" },
+      { "name": "The Mask-Only Gradient Rule", "body": "A radial gradient appears only as an alpha mask defining where the echo's light falls on the hero photograph; never as a visible colour fill.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do rest echo-lit reading content at 62% opacity and light it to full only through the echo.",
+      "Do keep red to lines, points and the single primary button.",
+      "Do use Archivo's width axis (wdth 62) for big letterforms and numerals, and wdth 100 for reading.",
+      "Do keep every rectangle square and reserve circles for dots, rings and the selection point.",
+      "Do rest photographs in greyscale and return their colour on echo.",
+      "Do make every motion interruptible from its on-screen value and provide a fully lit static state for reduced motion.",
+      "Do gate hover effects behind fine-pointer hover media queries and give presses a small scale-down (0.96–0.98)."
+    ],
+    "donts": [
+      "Don't add shadows, glows, blur or visible gradients; depth is light.",
+      "Don't fill large areas or backgrounds with red.",
+      "Don't hide content behind opacity that only script can lift; entrances use transform only.",
+      "Don't let reading text rest dimmer than 62%; the near-invisible resting state is for the braille letters alone.",
+      "Don't introduce a second typeface or round the corners of buttons and panels.",
+      "Don't use Marvel art, logos, costume imagery or comic-splash composition."
+    ]
+  }
+}
